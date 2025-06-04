@@ -1,0 +1,201 @@
+/* Main Wrapper */
+.wrapper {
+  display: flex;
+  height: 84.4vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 225px;
+  background: #A569BD;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  padding: 25px;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  background: #A569BD;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.navItem:hover {
+  background: #6C3483;
+}
+
+/* Badge Display Section */
+.badgeContainer {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Badge Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 badges per row */
+  gap: 25px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Individual Badge */
+.badgeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid #6C3483
+}
+
+/* Badge Image */
+.badgeImage {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1 / 1;  /* Ensures a perfect square */
+  object-fit: cover;  /* Crop and fit the image */
+  border-radius: 10px; /* Optional: Makes edges rounded */
+  transition: transform 0.3s;
+}
+
+.badgeImage:hover {
+  transform: scale(1.1);
+}
+
+
+/* Locked Badge (Grayscale) */
+.locked {
+  filter: grayscale(100%) brightness(50%);
+}
+
+/* Badge Text */
+.badgeText {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ======== 1024px (Small Laptop / Tablet Landscape) ======== */
+@media (max-width: 1024px) {
+  .wrapper{
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+  }
+
+  .navItem {
+    font-size: 1.1em;
+  }
+
+  .container {
+    width: calc(100% - 200px);
+    padding: 1.5em;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+
+  .badgeImage{
+    width: 100px;
+    height: 100px;
+  }
+
+  .badgeContainer {
+    padding: 30px;
+  }
+}
+
+
+/* ======== 768px (Tablet Portrait) ======== */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navItem {
+    padding: 12px;
+    font-size: 1em;
+    flex: 1;
+    text-align: center;
+  }
+
+  .badgeContainer {
+    padding: 20px;
+  }
+
+  .badgeImage{
+    width: 80px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}
+
+
+/* ======== 480px (Mobile) ======== */
+@media (max-width: 480px) {
+  .navItem {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+
+  .badgeContainer {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .badgeImage{
+    width: 60px;
+    height: 60px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+  }
+
+  .badgeText {
+    font-size: 14px;
+  }
+}

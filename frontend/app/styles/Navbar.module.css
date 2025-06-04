@@ -1,0 +1,189 @@
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #4A235A;
+    color: white;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 1.2em;
+    font-weight: bold;
+    flex-wrap: wrap; /* Allow the navbar to wrap on smaller screens */
+}
+
+/* Profile Icon */
+.profileIcon {
+    position: relative;
+    margin-top: 5px;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #E8DAEF;
+    border-radius: 12px;
+    padding: 10px 0;
+    width: 220px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    color: #4A235A;
+    z-index: 999;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdownMenu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdownMenu li {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 1.1rem;
+}
+
+.dropdownMenu li:hover {
+    background-color: #A569BD;
+    color: white;
+    transform: scale(1.02);
+    border-radius: 6px;
+}
+
+.logout {
+    background-color: transparent;
+    border: none;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: crimson;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.logout:hover {
+    border-radius: 6px;
+}
+
+/* Navbar links styling */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 50px; 
+    object-fit: cover;
+    object-position: center; 
+}
+
+.welcomeText {
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.navItem {
+    margin: 0 20px;
+    font-size: 1.2rem;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .navItem {
+        font-size: 1.1rem;
+        margin: 0 15px;
+    }
+
+    .welcomeText {
+        font-size: 1rem;
+        margin-right: 15px;
+    }
+
+    /* Dropdown menu positioning for smaller screens */
+    .dropdownMenu {
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+    }
+    .navItem {
+        font-size: 1rem;
+        margin: 10px 15px 10px 0; 
+      }
+
+    .welcomeText {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    /* Profile Icon adjustments */
+    .profileIcon {
+        margin-top: 10px;
+    }
+
+    /* Dropdown menu adjustments */
+    .dropdownMenu {
+        width: 200px;
+        left: -150;
+        right: 0;
+    }
+
+    .logo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 1rem;
+    }
+
+    .navItem {
+        font-size: 1rem;
+        margin: 10px 15px 10px 0; 
+    }
+
+    .welcomeText {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    /* Dropdown menu adjustments */
+    .dropdownMenu {
+        width: 200px;
+        left: -160;
+        right: 0;
+    }
+
+    .logo {
+        width: 130px;
+        margin-top: 10px;
+    }
+}

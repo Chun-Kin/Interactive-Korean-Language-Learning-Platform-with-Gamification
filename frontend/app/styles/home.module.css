@@ -1,0 +1,334 @@
+.wrapper {
+  display: flex;
+  height: 84.4vh;
+}
+
+.sidebar {
+  width: 225px;
+  background: #A569BD;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  padding: 25px;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  background: #A569BD;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.navItem:hover {
+  background: #6C3483;
+}
+
+/* Main Content */
+.container {
+  flex-grow: 1;
+  padding: 30px;
+  position: relative;
+  background-image: url('/images/background.jpg');
+  background-size: cover; /* or contain depending on your design */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+
+/* Main wrapper for the two sections */
+.progressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  color: white;
+}
+
+/* Skill & Experience Container */
+.skillExpContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: #6C3483;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skillExpContainer p {
+  padding: 0 10px 10px 10px;
+  font-size: 1.5em;
+}
+
+/* Experience Bar Layout */
+.experienceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background: #E8DAEF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experienceText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+.progressBar {
+  flex-grow: 1;
+  height: 12px;
+  background: rgb(163, 162, 162);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(to right, #4CAF50, #81C784);
+  transition: width 0.4s ease-in-out;
+}
+
+/* Points Section */
+.pointsContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #6C3483;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pointsContainer h2 {
+  text-align: left;
+  padding-bottom: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.pointsBoxContainer {
+  display: flex;
+  gap: 50px;
+}
+
+.pointsBox {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  background-image: url('/images/background2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 250px;
+  color: #fff; /* Optional: ensures text is visible */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointsBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25); /* Adjust 0.4 to make it darker or lighter */
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.pointsBox > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pointsBox h3 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #000000;
+  font-weight: bold;
+}
+
+.pointsBox p {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.continueButton {
+  background: #A569BD;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #6C3483;
+}
+
+.continueButton:hover {
+  background: #6C3483;
+  border: 2px solid #A569BD;
+}
+
+/* ========= 1024px (Tablet Landscape) ========= */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .navItem {
+    font-size: 1.1em;
+  }
+
+  .progressWrapper{
+    width: 700px;
+  }
+
+  .pointsContainer h2{
+    font-size: 1.4em;
+  }
+
+  .pointsBoxContainer {
+    gap: 20px;
+  }
+
+  .pointsBox {
+    width: 100%;
+    height: auto;
+  }
+
+  .continueButton{
+    font-size: 1em;
+  }
+
+  .pointsBox h3 {
+    font-size: 1.6em;
+  }
+
+  .skillExpContainer p {
+    font-size: 1.3em;
+  }
+}
+
+/* ========= 768px (Tablet Portrait) ========= */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%; 
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navItem {
+    font-size: 1em;
+    padding: 12px 10px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .progressWrapper {
+    width: 100%;
+  }
+
+  .pointsContainer h2{
+    font-size: 1.25em;
+  }
+
+  .pointsBoxContainer {
+    flex-direction: column; 
+    gap: 20px;
+  }
+
+  .pointsBox {
+    padding: 15px;
+    height: auto;
+  }
+
+  .pointsBox h3 {
+    font-size: 1.5em;
+  }
+
+  .pointsBox p {
+    font-size: 1em;
+  }
+
+  .skillExpContainer p {
+    font-size: 1.1em;
+  }
+
+  .continueButton {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+
+/* ========= 480px (Mobile) ========= */
+@media (max-width: 480px) {
+  .skillExpContainer {
+    padding: 15px;
+  }
+
+  .skillExpContainer p {
+    font-size: 1em;
+  }
+
+  .experienceText {
+    font-size: 0.9em;
+  }
+
+  .pointsContainer h2 {
+    font-size: 1.2em;
+  }
+
+  .pointsBox {
+    padding: 10px;
+  }
+
+  .pointsBox h3 {
+    font-size: 1.2em;
+  }
+
+  .pointsBox p {
+    font-size: 0.9em;
+  }
+
+  .continueButton {
+    font-size: 0.9em;
+    padding: 6px 12px;
+  }
+}

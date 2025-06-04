@@ -1,0 +1,61 @@
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.aboutCard {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.aboutTitle {
+    font-size: 36px;
+    color: #6C3483;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.aboutDescription {
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #6C3483;
+    font-weight: bold;
+}
+
+.aboutSection {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    font-size: 24px;
+    color: #6C3483;
+    font-weight: semi-bold;
+    margin-bottom: 10px;
+}
+
+.sectionDescription {
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.featureList {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #000000;
+}

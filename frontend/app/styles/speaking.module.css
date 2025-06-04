@@ -1,0 +1,329 @@
+.wrapper {
+  display: flex;
+  height: 84.4vh;
+}
+
+.sidebar {
+  width: 225px;
+  background: #A569BD;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  padding: 25px;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  background: #A569BD;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.navItem:hover {
+  background: #6C3483;
+}
+
+/* Content Section */
+.container {
+  flex-grow: 1;
+  width: calc(100% - 225px);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #6C3483;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Grid Layout */
+/* Grouped Skill Level */
+.skillGroup {
+  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.skillTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6C3483;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* Level Grid */
+.levelGrid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Individual Level Card */
+.levelGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.level {
+  width: 325px; /* Increase size */
+  height: 325px; /* Increase height */
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.level:hover {
+  transform: scale(1.05);
+  background-color: #A569BD;
+}
+
+.level.unlocked {
+  border: 3px solid #6C3483;
+}
+
+.level.locked {
+  border: 3px solid #ccc;
+  opacity: 0.5;
+}
+
+.levelImage {
+  width: 100%;
+  height: 150px;
+  object-fit: contain; /* Fix image fitting */
+}
+
+.levelTitle {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.levelDescription {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 15px;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.navButton {
+  background-color: #A569BD;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: #6C3483;
+}
+
+.navButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pageIndicator {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Medium Screens: Tablets (1024px and down) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .navItem {
+    font-size: 1.1em;
+  }
+
+  .container {
+    width: calc(100% - 200px);
+    padding: 1.5em;
+  }
+  
+  .level {
+    width: 200px;
+    height: 280px;
+  }
+
+  .levelImage {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; 
+  }
+
+  .levelTitle {
+    font-size: 20px;
+  }
+
+  .levelDescription {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens: Tablets & Mobiles (768px and down) */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-around;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navItem {
+    padding: 12px;
+    font-size: 1em;
+    flex: 1;
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .level {
+    width: 170px;
+    height: 280px;
+  }
+
+  .levelImage {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; 
+  }
+
+
+  .levelTitle {
+    font-size: 18px;
+  }
+
+  .levelDescription {
+    font-size: 13px;
+  }
+
+  .skillTitle {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra Small Screens: Phones (480px and down) */
+@media (max-width: 480px) {
+  .wrapper {
+    height: 110vh;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .navItem {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+
+  .title{
+    font-size: 1.2rem;
+  }
+
+  .description{
+    font-size: 1rem;
+  }
+
+  .skillTitle {
+    font-size: 1.2rem;
+  }
+
+  .skillGroup{
+    margin-top: 5px;
+  }
+
+  .levelGrid {
+    gap: 10px;
+  }
+  
+  .level {
+    width: 250px;
+    height: 180px;
+  }
+
+  .levelImage {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; 
+  }
+
+  .levelTitle {
+    font-size: 16px;
+  }
+
+  .levelDescription {
+    font-size: 12px;
+  }
+
+  .navButton {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .pageIndicator {
+    font-size: 16px;
+  }
+}

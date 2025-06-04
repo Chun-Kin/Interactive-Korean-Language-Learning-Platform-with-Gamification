@@ -1,0 +1,421 @@
+/* 🌟 New Parent Wrapper for Centering */
+.pageContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 84.4vh;
+}
+
+/* 🏆 Centered Quiz Container */
+.container {
+    text-align: center;
+    background: white;
+    padding: 50px 100px 100px 100px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 1000px;
+    max-width: 90%;
+    border: 3px solid #6C3483;
+    margin-right: 70px;
+}
+
+/* 🎯 Quiz Level Display  */
+.quizLevel {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #6C3483;
+    top: 15px;
+    left: 20px;
+}
+
+/* 🎵 Audio Button Box */
+.audioContainer {
+    background: #E8DAEF;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #6C3483;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+/* 🎵 Audio Button */
+.audioButton {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6C3483;
+}
+
+/* ❓ Question Styling */
+.question {
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* ✏️ Choices Container */
+.choicesContainer {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+/* ✅ Draggable Choice Buttons (Same Size, Bigger) */
+.choiceButton {
+    width: 200px;
+    height: 100px;
+    padding: 12px;
+    border: 3px solid #6C3483;
+    border-radius: 10px;
+    cursor: grab;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choiceButton:hover {
+    background-color: #A569BD;
+}
+
+/* 📥 Answer Box */
+.answerBoxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+/* 🎯 Answer Box (Wider & Taller) */
+.answerBox {
+    width: 300px; /* Increased width */
+    height: 80px; /* Increased height */
+    border: 3px dashed #aaa;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    background-color: #bab6bd65;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.answerBox:hover {
+    background-color: #E8DAEF;
+    border-color: #A569BD;
+}
+
+/* 🎉 Completion Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 450px;
+    border: 3px solid #6C3483;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h2 {
+    color: #6C3483;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.modal p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.modal button {
+    background-color: #A569BD;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.modal button:hover {
+    background-color: #6C3483;
+}
+
+
+/* 🛑 Quit Button */
+.quitButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 10; /* Ensures it's above everything */
+    border: 3px solid #6C3483;
+}
+
+.quitButton:hover {
+    background-color: #cc0000;
+}
+
+/* ❗ Quit Confirmation Modal */
+.modalQuit {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    border: 3px solid #6C3483;
+}
+
+.modalContent h2 {
+    font-size: 1.7em;
+    margin-bottom: 20px;
+}
+
+.modalContent p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.modalButtons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    border: 3px solid #6C3483;
+}
+
+.confirmButton:hover {
+    background-color: #cc0000;
+}
+
+.cancelButton {
+    background-color: #A569BD;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    border: 3px solid #6C3483;
+}
+
+.cancelButton:hover {
+    background-color: #6C3483;
+}
+
+.imageContainer {
+    margin-top: 420px;
+  }
+
+/* 📱 Tablet Devices */
+@media (max-width: 1024px) {
+    .container {
+      height: 550px;
+      width: 800px;
+    }
+  
+    .quizLevel {
+      font-size: 2em;
+    }
+  
+    .question {
+      font-size: 22px;
+    }
+  
+    .choiceButton {
+      width: 160px;
+      height: 90px;
+      font-size: 16px;
+    }
+  
+    .answerBox {
+      width: 250px;
+      height: 70px;
+      font-size: 18px;
+    }
+  
+    .modal {
+      width: 80%;
+    }
+
+    .imageContainer img{
+        height: 100px;
+        width: 140px;
+    }
+    .quitButton{
+        padding: 10px 20px;
+    }
+  }
+  
+  /* 📱 Mobile Devices */
+  @media (max-width: 768px) {
+    .pageContainer {
+      flex-direction: column;
+      justify-content: center;
+      display: flex;
+      height: 90vh;
+    }
+  
+    .container {
+      width: 500px;
+      height: 600px;
+      margin-left: 80px;
+      margin-bottom: 80px;
+    }
+  
+    .quizLevel {
+      font-size: 1.6em;
+    }
+  
+    .question {
+      font-size: 1.1em;
+    }
+    .audioContainer{
+        margin: 0 auto;
+        padding: 6px 10px;
+    }
+
+    .audioButton{
+        font-size: 18px;
+    }
+
+    .choicesContainer {
+        display: grid; 
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+  
+    .choiceButton {
+      width: 200px;
+      height: 100px;
+      font-size: 16px;
+    }
+
+    .answerBox {
+      width: 90%;
+      height: 55px;
+      font-size: 16px;
+    }
+  
+    .modal {
+      width: 90%;
+    }
+  
+    .quitButton {
+      top: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+  
+    .imageContainer {
+      margin-top: 60px;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  
+  /* 📱 Extra Small Devices */
+  @media (max-width: 480px) {
+    .pageContainer {
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+        height: 82vh;
+    }
+
+    .container {
+      padding: 25px 20px 40px 20px;
+    }
+  
+    .quizLevel {
+      font-size: 1.5em;
+    }
+  
+    .question {
+      font-size: 18px;
+    }
+  
+    .choiceButton {
+      font-size: 15px;
+      height: 70px;
+      width: 170px;
+    }
+  
+    .answerBox {
+      font-size: 14px;
+    }
+
+    .modalContent{
+        width: 300px;
+        height: 280px;
+    }
+  
+    .modal h2 {
+      font-size: 1.5em;
+    }
+  
+    .modal button,
+    .confirmButton,
+    .cancelButton {
+      font-size: 14px;
+      padding: 12px 18px;
+    }
+  }
+  

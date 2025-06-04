@@ -1,0 +1,397 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 92vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; 
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/korean.jpg'); 
+  background-size: cover;
+  background-position: center; 
+  z-index: -1; 
+}
+
+/* Dark overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: 0; 
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+  margin-top: 1rem;
+  color: #ffffff;
+  text-shadow:
+  3px 3px 0 #A569BD,
+  -1px -1px 0 #A569BD,  
+  1px -1px 0 #A569BD,
+  -1px 1px 0 #A569BD,
+  1px 1px 0 #A569BD;
+}
+
+.lessonContainer {
+  position: relative;
+  z-index: 1; 
+  padding: 2rem 2rem 0 2rem;
+}
+
+.lessonImage {
+  border-radius: 8px;
+  width: 100%;
+  height: 450px; 
+  object-fit: cover;
+  object-position: center; 
+  border: 3px solid #4A235A;
+}
+
+.button {
+  padding: 1rem 3.5rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #A569BD;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  z-index: 1; 
+  font-weight: bold;
+  transition: background 0.3s;
+  border: 3px solid #4A235A;
+}
+
+.button:hover {
+  background-color: #4A235A;
+}
+
+/* Shared Section Style */
+.introSection,
+.cultureSection,
+.speakingSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 5%;
+  gap: 2rem;
+  width: 100%;
+}
+
+.introSection {
+  background: linear-gradient(to right, #d5cada, #bb70c2);
+}
+
+.cultureSection {
+  background: linear-gradient(to left, #7e389cc5, #55156eef);
+  color: #ffffff;
+}
+
+.speakingSection {
+  background: linear-gradient(to right, #d5cada, #bb70c2);
+}
+
+
+/* Text Styling */
+.textBlock {
+  flex: 1;
+  max-width: 900px;
+}
+
+.textBlock h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow:
+      3px 3px 0 #000,
+      -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.textBlock p {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  line-height: 1.6;
+  color: #A569BD;
+  text-shadow:
+  1.5px 1.5px 0 #000,
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+.cultureSection .textBlock p {
+  color: #E8DAEF;
+}
+
+.introImage {
+  position: relative;
+  width: 320px; /* Adjust based on your image size */
+  height: 300px;
+  margin: auto;
+}
+
+.introImage img {
+  position: absolute;
+  max-width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: 3px solid #4A235A;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.introImage img:nth-child(1) {
+  z-index: 3;
+  top: 0;
+  right: 75%;
+}
+
+.introImage img:nth-child(2) {
+  z-index: 2;
+  top: 20px;
+  left: 0;
+}
+
+.introImage img:nth-child(3) {
+  z-index: 1;
+  top: 40px;
+  left: 70%;
+}
+
+.introImage img:hover {
+  z-index: 5;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Image Block */
+.imageBlock {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.imageBlock img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  border: 3px solid #4A235A;
+}
+
+.imageBlock img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2rem;
+    text-shadow: none;
+  }
+
+  .button {
+    font-size: 1.3rem;
+    padding: 1rem 3rem;
+  }
+
+  .lessonImage {
+    height: 400px;
+  }
+
+  .introImage{
+    width: 175px;
+    height: 300px;
+  }
+
+  .textBlock {
+    font-size: 1.5rem;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.2rem;
+    text-shadow: none;
+  }
+
+  .lessonImage {
+    height: 350px;
+  }
+
+  .button {
+    font-size: 1.4rem;
+    padding: 1rem 3.5rem;
+  }
+
+  .introSection, .cultureSection, .speakingSection {
+    padding: 3rem 3%;
+  }
+
+  .textBlock p {
+    font-size: 1.6rem;
+  }
+
+  .introImage {
+    width: 150px;
+    height: 250px;
+  }
+
+  .introImage img {
+    height: 225px;
+  }
+
+  .imageBlock img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 85vh; /* Adjust height for smaller screens */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    text-shadow: none;
+  }
+
+  .introSection, .cultureSection, .speakingSection {
+    padding: 3rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .introSection {
+    background: linear-gradient(to right, #d5cada, #bb70c2);
+  }
+
+  .cultureSection {
+    background: linear-gradient(to left, #7e389cc5, #55156eef);
+  }
+
+  .speakingSection {
+    background: linear-gradient(to right, #d5cada, #bb70c2);
+  }
+
+  .textBlock h1 {
+    font-size: 2rem;
+  }
+
+  .textBlock p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .introImage {
+    width: 200px;
+    height: 250px;
+  }
+
+  .lessonImage {
+    height: 350px;
+  }
+
+  .imageBlock img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .button {
+    font-size: 1.4rem;
+    padding: 1rem 2.5rem;
+    margin-top: 20px;
+  }
+
+  .textBlock {
+    flex: 1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    font-size: 1.2rem;
+    padding: 0.8rem 2.5rem;
+  }
+
+  .lessonImage {
+    height: 180px;
+  }
+
+  .introImage {
+    width: 150px;
+    height: 200px;
+  }
+
+  .introImage img {
+    height: 170px;
+  }
+
+  .textBlock p {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .textBlock h1 {
+    font-size: 1.8rem;
+  }
+
+  .introSection,
+  .cultureSection,
+  .speakingSection {
+    padding: 2rem 1rem;
+  }
+
+  .imageBlock {
+    justify-content: center;
+  }
+
+  .imageBlock img {
+    width: 100%;
+    height: auto;
+  }
+}

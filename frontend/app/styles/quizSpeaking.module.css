@@ -1,0 +1,285 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 84.4vh;
+  position: relative;
+}
+
+/* 🎤 Title */
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* 🗨️ Chatbox */
+.chatbox {
+  width: 100%;
+  max-width: 700px;
+  height: 450px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f9f9f9;
+  position: relative;
+  border: 3px solid #6C3483;
+  overflow-y: auto; 
+}
+
+.textContainer{
+  margin-left: 10px;
+}
+
+/* 💬 Messages */
+.botMessage,
+.userMessage {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 75%;
+}
+
+.botMessage {
+  background: #E8DAEF;
+  align-self: flex-start;
+  border: 3px solid #6C3483;
+}
+
+.userMessage {
+  background: #E8DAEF;
+  align-self: flex-end;
+  border: 3px solid #6C3483;
+}
+
+.translation {
+  font-size: 12px;
+  color: #777;
+}
+
+/* 🎙 Speak Button */
+.speakButton {
+  position: static; /* Remove absolute positioning */
+  width: 100%; /* Take full width */
+  max-width: 700px;
+  margin-top: 15px; /* Add space between chatbox and button */
+  padding: 12px 20px;
+  font-size: 18px;
+  background: #A569BD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.3s;
+  border: 3px solid #6C3483;
+}
+
+.speakButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.speakButton:hover {
+  background: #6C3483;
+}
+
+/* 🔊 Audio Button */
+.playAudioButton {
+  background: #A569BD;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s;
+}
+
+.playAudioButton:hover {
+  background: #6C3483;
+}
+
+/* 🎉 Completion Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 450px;
+  border: 3px solid #6C3483;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h2 {
+  color: #6C3483;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.modal p {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.modal button {
+  background-color: #A569BD;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.modal button:hover {
+  background-color: #6C3483;
+}
+
+/* 🛑 Quit Button */
+.quitButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
+  border: 3px solid #6C3483;
+}
+
+.quitButton:hover {
+  background-color: #cc0000;
+}
+
+/* ❗ Quit Confirmation Modal */
+.modalQuit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  border: 3px solid #6C3483;
+}
+
+.modalContent h2 {
+  font-size: 1.7em;
+  margin-bottom: 20px;
+}
+
+.modalContent p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.modalButtons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 16px;
+  border: 3px solid #6C3483;
+  font-weight: bold;
+}
+
+.confirmButton:hover {
+  background-color: #cc0000;
+}
+
+.cancelButton {
+  background-color: #A569BD;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid #6C3483;
+}
+
+.cancelButton:hover {
+  background-color: #6C3483;
+}
+
+
+/* ===== 📱 Responsive Design ===== */
+@media (max-width: 480px) {
+  .modal{
+    width: 330px;
+    height: 320px;
+  }
+  .modal h2{
+    font-size: 1.5em;
+  }
+  .modal p {
+    font-size: 1.2em;
+  }
+  .modal button {
+    padding: 10px 20px;
+  }
+  .quitButton {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  .title{
+    font-size: 1.8em;
+    margin-top: 15px;
+  }
+  .chatbox{
+    width: 100%;
+    height: 450px;
+  }
+  .modalContent{
+    width: 300px;
+    height: 300px;
+  }
+}
