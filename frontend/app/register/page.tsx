@@ -17,7 +17,7 @@ export default function Register() {
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(""); // Clear previous errors
+    setError(""); 
   
     try {
       const response = await fetch('http://localhost:5000/api/auth/register', {
@@ -27,7 +27,7 @@ export default function Register() {
       });
   
       const data = await response.json();
-      console.log("Server Response:", data); // Debugging: Log full response
+      console.log("Server Response:", data); 
   
       if (response.ok) {
         console.log("Successfully registered");
@@ -41,7 +41,7 @@ export default function Register() {
         setError(data.error || 'Registration failed');
       }
     } catch (err) {
-      console.error("Fetch error:", err); // Log actual error
+      console.error("Fetch error:", err); 
       setError(`Error: ${err.message}`);
     }
   };
